@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Petição Trabalhista - Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="c:\Users\Usuario\Pictures\logo vagner.png" alt="Logo da Empresa" class="logo">
+        <h1>🛠️ Gerador de Petição Trabalhista</h1>
+        <p>Preencha os dados básicos e selecione os tópicos para gerar a inicial.</p>
+
+        <form id="peticao-form">
+
+            <fieldset>
+                <legend>Informações do Reclamante e Petição</legend>
+                
+                <div class="form-group">
+                    <label for="nome-reclamante">NOME DO RECLAMANTE</label>
+                    <input type="text" id="nome-reclamante" name="NOME DO RECLAMANTE" required>
+                </div>
+                <div class="form-group">
+                    <label for="rg">RG do reclamante com emissor</label>
+                    <input type="text" id="rg" name="RG do reclamante com emissor" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF do Reclamante</label>
+                    <input type="text" id="cpf" name="CPF do Reclamante" required>
+                </div>
+                <div class="form-group">
+                    <label for="profissao">Profissão</label>
+                    <input type="text" id="profissao" name="Profissão" required>
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço do Reclamante</label>
+                    <input type="text" id="endereco" name="Endereço do Reclamante" required>
+                </div>
+                <div class="form-group">
+                    <label for="cidade-uf">Cidade/UF do Reclamante</label>
+                    <input type="text" id="cidade-uf" name="Cidade/UF do Reclamante" required>
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP Reclamante</label>
+                    <input type="text" id="cep" name="CEP Reclamante" required>
+                </div>
+                
+                <hr>
+                
+                <div class="form-group">
+                    <label for="nome-reclamada">Nome da Reclamada</label>
+                    <input type="text" id="nome-reclamada" name="Nome da Reclamada" required>
+                </div>
+                <div class="form-group">
+                    <label for="cnpj">CNPJ da Reclamada</label>
+                    <input type="text" id="cnpj" name="CNPJ da Reclamada" required>
+                </div>
+                <div class="form-group">
+                    <label for="endereco-reclamada">Endereço completo da reclamada com CEP</label>
+                    <input type="text" id="endereco-reclamada" name="Endereço completo da reclamada com CEP" required>
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                    <label for="admissao">Data de Admissao</label>
+                    <input type="date" id="admissao" name="Data de Admissao" required>
+                </div>
+                <div class="form-group">
+                    <label for="desligamento">Data de desligamento</label>
+                    <input type="date" id="desligamento" name="Data de desligamento" required>
+                </div>
+                <div class="form-group">
+                    <label for="funcao">Funcao reclamante</label>
+                    <input type="text" id="funcao" name="Funcao reclamante" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo-desligamento">Tipo de desligamento</label>
+                    <input type="text" id="tipo-desligamento" name="Tipo de desligamento" required>
+                </div>
+                <div class="form-group">
+                    <label for="salario">Ultimo Salario (R$)</label>
+                    <input type="text" id="salario" name="Ultimo Salario" placeholder="0000,00" required>
+                </div>
+                <div class="form-group">
+                    <label for="escala">Escala de trabalho</label>
+                    <input type="text" id="escala" name="escala de trabalho" required>
+                </div>
+                <div class="form-group">
+                    <label for="horario-jornada-1">Horario de trabalho da Jornada 1</label>
+                    <input type="text" id="horario-jornada-1" name="Horario de trabalho da Jornada 1" required>
+                </div>
+                <div class="form-group">
+                    <label for="intervalo-1-minutos">intervalo intrajornada 1 em minutos</label>
+                    <input type="number" id="intervalo-1-minutos" name="intervalo intrajornada 1 em minutos" required>
+                </div>
+                <div class="form-group">
+                    <label for="jurisdicao">JURISDICAO COM UF</label>
+                    <input type="text" id="jurisdicao" name="JURISDICAO COM UF" required>
+                </div>
+                <div class="form-group">
+                    <label for="data-inicial-extenso">Data da Inicial por extenso</label>
+                    <input type="text" id="data-inicial-extenso" name="data da inicial por extenso" required>
+                </div>
+                
+                <hr>
+
+                <div class="form-group">
+                    <label for="triagem-peticao">SELECIONE O TIPO DE PETIÇÃO</label>
+                    <select id="triagem-peticao" name="SELECIONE O TIPO DE PETIÇÃO" required>
+                        <option value="">-- Selecione --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="genero-reclamante">GÊNERO DO RECLAMANTE</label>
+                    <select id="genero-reclamante" name="GÊNERO DO RECLAMANTE" required>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="email-reclamante">E-mail (Para Notificações)</label>
+                    <input type="email" id="email-reclamante" name="E-mail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="outros-pedidos">Outros Pedidos (Opcional, para o cabeçalho)</label>
+                    <textarea id="outros-pedidos" name="Outros pedidos" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Seleção de Tópicos da Petição</legend>
+                <div id="topics-container">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Complementos e Valores Estimados</legend>
+                <div id="complementos-container">
+                </div>
+            </fieldset>
+            
+            <button type="submit">Gerar Petição</button>
+        </form>
+
+        <div id="output-area">
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
